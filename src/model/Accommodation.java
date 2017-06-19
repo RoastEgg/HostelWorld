@@ -16,6 +16,7 @@ public class Accommodation {
 	private boolean IsMember;
 	private String cardID;
 	private int payType;
+	private int date;
 	
 	public int getId() {
 		return id;
@@ -60,6 +61,12 @@ public class Accommodation {
 	}
 	public void setPayType(int payType) {
 		this.payType = payType;
+	}
+	public int getDate() {
+		return date;
+	}
+	public void setDate(int date) {
+		this.date = date;
 	}
 	
 }

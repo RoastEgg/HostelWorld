@@ -20,6 +20,7 @@ public class BaseDaoImpl implements BaseDao {
             Session session= DBconnection.getSession();
             try {
                 session.save(bean);
+               // session.flush();
                 Transaction transaction=session.beginTransaction();
                 transaction.commit();
                 result=bean;

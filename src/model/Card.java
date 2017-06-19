@@ -22,6 +22,9 @@ public class Card {
     private double balance;
     private Date originalDate;
     private Date lastDate;
+    private boolean gender;
+    private String area;
+    
 	public String getId() {
 		return id;
 	}
@@ -81,6 +84,18 @@ public class Card {
 	}
 	public void setConsumption(double consumption) {
 		this.consumption = consumption;
+	}
+	public boolean isMale() {
+		return gender;
+	}
+	public void setGender(boolean gender) {
+		this.gender = gender;
+	}
+	public String getArea() {
+		return area;
+	}
+	public void setArea(String area) {
+		this.area = area;
 	}
     
 

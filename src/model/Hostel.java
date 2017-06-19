@@ -13,6 +13,7 @@ public class Hostel {
 	private String apply;
 	private String passWord;
 	private boolean isAccepted;
+	private String area;
 	
 	public int getId() {
 		return id;
@@ -37,6 +38,18 @@ public class Hostel {
 	}
 	public void setPassWord(String passWord) {
 		this.passWord = passWord;
+	}
+	/**
+	 * @return the area
+	 */
+	public String getArea() {
+		return area;
+	}
+	/**
+	 * @param area the area to set
+	 */
+	public void setArea(String area) {
+		this.area = area;
 	}
 	
 }
