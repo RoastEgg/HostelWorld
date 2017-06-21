@@ -1,5 +1,6 @@
 package daoImpl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -10,6 +11,10 @@ import model.Card;
 
 public class CardDaoImpl implements CardDao{
 
+	
+	public String[] area={"南京","无锡","徐州","常州","苏州",
+			"南通","连云港","淮安","盐城","扬州","镇江","泰州","宿迁"};
+		
 	BaseDao baseDao=new BaseDaoImpl();
 	
 	
@@ -102,6 +107,34 @@ public class CardDaoImpl implements CardDao{
 	public void update(Card card) {
 		baseDao.update(card);
 		System.out.println("update card,ok");
+	}
+
+	@Override
+	public ArrayList<Integer> areaOfCard() {
+		ArrayList<Integer> answer = new ArrayList<Integer>();
+		for (int i=0;i<13;i++){
+			String hql = "from model.Card as card where card.area like '"+area[i]+"'";
+			List<Card> results = baseDao.findByHql(hql);
+		    answer.add(results.size());
+//		    System.out.println("size:"+results.size());
+		}  
+		return answer;
+	}
+
+	@Override
+	public ArrayList<Integer> genderOfCard() {
+		ArrayList<Integer> answer = new ArrayList<Integer>();
+		String hql = "from model.Card as card where card.gender like "+"1";
+		List<Card> results = baseDao.findByHql(hql);
+		answer.add(results.size());
+		
+		hql = "from model.Card as card where card.gender like "+"0";
+		results = baseDao.findByHql(hql);
+		answer.add(results.size());
+
+//		    System.out.println("size:"+results.size());
+		  
+		return answer;
 	}
 
 }

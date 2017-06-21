@@ -24,6 +24,7 @@ public class Card {
     private Date lastDate;
     private boolean gender;
     private String area;
+    private int age;
     
 	public String getId() {
 		return id;
@@ -96,6 +97,18 @@ public class Card {
 	}
 	public void setArea(String area) {
 		this.area = area;
+	}
+	/**
+	 * @return the age
+	 */
+	public int getAge() {
+		return age;
+	}
+	/**
+	 * @param age the age to set
+	 */
+	public void setAge(int age) {
+		this.age = age;
 	}
     
 

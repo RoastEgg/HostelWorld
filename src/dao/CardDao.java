@@ -1,5 +1,7 @@
 package dao;
 
+import java.util.ArrayList;
+
 import model.Card;
 
 public interface CardDao {
@@ -10,6 +12,9 @@ public interface CardDao {
 	public void recharge(String cardID,double number);
 	public void delete(String cardID);
 	public void update(Card card);
+	public ArrayList<Integer> areaOfCard();
+	public ArrayList<Integer> genderOfCard();
+	
 //	public void activate(double money);
 //	public void qualificationPause();
 //	public void qualificationRecovry();

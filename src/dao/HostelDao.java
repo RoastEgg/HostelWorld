@@ -1,6 +1,7 @@
 package dao;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import model.Hostel;
@@ -15,5 +16,6 @@ public interface HostelDao {
 	//public void savePlan(HostelPlan hostelPlan);
 	public List<Hostel> getForCEO();
 	public void approve();
+	public ArrayList<Integer> areaOfHostel();
 
 }

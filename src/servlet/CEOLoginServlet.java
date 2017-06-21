@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -12,10 +13,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.AccommodationDao;
+import dao.CardDao;
 import dao.HostelDao;
 import dao.ReserveDao;
 import dao.RoomDao;
 import daoImpl.AccommodationDaoImpl;
+import daoImpl.CardDaoImpl;
 import daoImpl.HostelDaoImpl;
 import daoImpl.ReserveDaoImpl;
 import daoImpl.RoomDaoImpl;
@@ -32,11 +35,11 @@ public class CEOLoginServlet extends HttpServlet{
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	public ReserveDao reserve = new ReserveDaoImpl(); 
-	public AccommodationDao accommodation = new AccommodationDaoImpl(); 
-	public HostelDao hostel = new HostelDaoImpl(); 
-	public RoomDao room = new RoomDaoImpl(); 
-	
+	public ReserveDao reserveDao = new ReserveDaoImpl(); 
+	public AccommodationDao accommodationDao = new AccommodationDaoImpl(); 
+	public HostelDao hostelDao = new HostelDaoImpl(); 
+	public RoomDao roomDao = new RoomDaoImpl(); 
+	public CardDao cardDao = new CardDaoImpl();
 	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -54,15 +57,18 @@ public class CEOLoginServlet extends HttpServlet{
 		
 		ServletContext context = request.getServletContext();
 		
-		List<Reserve> reserveList = reserve.getForCEO();
-	    List<Accommodation> accommodationList = accommodation.getForCEO();
-	    List<Hostel>         applyList        = hostel.getForCEO();
-		List<Room>           roomList  = room.getForCEO();
+		List<Reserve> reserveList = reserveDao.getForCEO();
+	    List<Accommodation> accommodationList = accommodationDao.getForCEO();
+	    List<Hostel>         applyList        = hostelDao.getForCEO();
+		List<Room>           roomList  = roomDao.getForCEO();
+	   // ArrayList<Integer>   areaDistribution = cardDao.areaOfCard();
+		
 	    
 	    request.getSession().setAttribute("CEOReserve", reserveList);
 	    request.getSession().setAttribute("CEOAccommodation", accommodationList);
 	    request.getSession().setAttribute("CEOHostelApply", applyList);
 	    request.getSession().setAttribute("CEORoomApply", roomList);
+	   // request.getSession().setAttribute("areaDistribution", areaDistribution);
 	    
 		context.getRequestDispatcher("/hostel/CEO.jsp").forward(request, response);
 

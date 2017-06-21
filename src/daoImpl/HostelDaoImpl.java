@@ -6,9 +6,13 @@ import java.util.List;
 
 import dao.BaseDao;
 import dao.HostelDao;
+import model.Card;
 import model.Hostel;
 public class HostelDaoImpl implements HostelDao{
 
+	public String[] area={"南京","无锡","徐州","常州","苏州",
+			"南通","连云港","淮安","盐城","扬州","镇江","泰州","宿迁"};
+	
 	
 	BaseDao baseDao=new BaseDaoImpl();
 	
@@ -84,5 +88,18 @@ public class HostelDaoImpl implements HostelDao{
 		
 		System.out.println("开店申请 已审批");
 		
+	}
+
+	@Override
+	public ArrayList<Integer> areaOfHostel() {
+		ArrayList<Integer> answer = new ArrayList<Integer>();
+		for (int i=0;i<13;i++){
+			String hql = "from model.Hostel as hostel where hostel.area like '"+area[i]+"'";
+			List<Card> results = baseDao.findByHql(hql);
+//			System.out.println("size:"+results.size());
+		    answer.add(results.size());
+//		    System.out.println("size:"+results.size());
+		}  
+		return answer;
 	}
 }

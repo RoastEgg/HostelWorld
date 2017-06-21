@@ -1,5 +1,4 @@
 <%@page import="model.Accommodation"%>
-<%@page import="factory.ServiceFactory"%>
 <%@page import="model.Reserve"%>
 <%@page import="java.text.DateFormat"%>
 <%@page import="java.text.ParseException"%>

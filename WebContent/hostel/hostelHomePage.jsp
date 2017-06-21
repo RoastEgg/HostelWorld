@@ -29,6 +29,93 @@
 		</div>
 
 		<div class="col-md-8">
+		
+			<div class="panel panel-success">
+				<div class="panel-heading">
+					<h3 class="panel-title">统计分析</h3>
+				</div>
+				<div class="panel-body">
+
+					<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+						<div class="tile-stats">
+														
+							<button  class="btn btn-default">每个月订单的总金额</button>
+							<div id="graph1" style="width: 800px;height:400px;"></div>
+							
+						 	<button  class="btn btn-default">每个月订单的平均金额</button>
+							<div id="graph2" style="width: 800px;height:400px;"></div>
+							
+							<button  class="btn btn-default">最近一周的订单</button>
+							
+							<table class="table table-striped table-hover table-condensed" style="width: 800px;">
+                            <thead>
+                            <tr>
+                                <th  style="font-size: 25px;">房间号</th>
+                                <th  style="font-size: 25px;">会员卡号</th>
+                                <th  style="font-size: 25px;">日期</th>
+                                <th  style="font-size: 25px;">价格</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td style="font-size: 20px;">001</td>
+                                <td style="font-size: 20px;">1000002</td>
+								<td style="font-size: 20px;">2017-06-20</td>
+								<td style="font-size: 20px;">150</td>
+                            </tr>
+                            <tr>
+                                <td style="font-size: 20px;">008</td>
+                                <td style="font-size: 20px;">1000092</td>
+								<td style="font-size: 20px;">2017-06-19</td>
+								<td style="font-size: 20px;">280</td>								
+                            </tr>
+							<tr>
+                                <td style="font-size: 20px;">017</td>
+                                <td style="font-size: 20px;">1000085</td>
+								<td style="font-size: 20px;">2017-06-19</td>
+								<td style="font-size: 20px;">360</td>								
+                            </tr>
+							<tr>
+                                <td style="font-size: 20px;">029</td>
+                                <td style="font-size: 20px;">1000083</td>
+								<td style="font-size: 20px;">2017-06-19</td>
+								<td style="font-size: 20px;">180</td>								
+                            </tr>
+							<tr>
+                                <td style="font-size: 20px;">016</td>
+                                <td style="font-size: 20px;">1000074</td>
+								<td style="font-size: 20px;">2017-06-19</td>
+								<td style="font-size: 20px;">260</td>								
+                            </tr>
+							<tr>
+                                <td style="font-size: 20px;">017</td>
+                                <td style="font-size: 20px;">1000003</td>
+								<td style="font-size: 20px;">2017-06-18</td>
+								<td style="font-size: 20px;">340</td>								
+                            </tr>
+							<tr>
+                                <td style="font-size: 20px;">021</td>
+                                <td style="font-size: 20px;">1000085</td>
+								<td style="font-size: 20px;">2017-06-18</td>
+								<td style="font-size: 20px;">410</td>								
+                            </tr>
+							<tr>
+                                <td style="font-size: 20px;">039</td>
+                                <td style="font-size: 20px;">1000085</td>
+								<td style="font-size: 20px;">2017-06-17</td>
+								<td style="font-size: 20px;">120</td>								
+                            </tr>
+                            </tbody>
+                        </table>
+							
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		
+		
+		
 			<div class="panel panel-info">
 				<div class="panel-heading">
 					<h3 class="panel-title">发布计划</h3>
@@ -105,8 +192,11 @@
 
 	<script src="hostel/js/jquery-3.1.0.min.js"></script>
 	<script src="hostel/js/bootstrap.min.js"></script>
-
-
-
+    <script src="hostel/js/echarts.min.js"></script>
+    
+	<script src="hostel/js/sumOfMoney.js"></script>
+	<script src="hostel/js/averageOfMoney.js"></script>
+	
+	
 </body>
 </html>

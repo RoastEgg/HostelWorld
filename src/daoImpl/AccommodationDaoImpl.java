@@ -1,5 +1,6 @@
 package daoImpl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -69,6 +70,45 @@ public class AccommodationDaoImpl implements AccommodationDao{
 	    }
 	    
 		System.out.println("delete accommodation,ok");
+	}
+
+	@Override
+	public ArrayList<Double> getSumOfMoney() {
+		ArrayList<Double> answer = new ArrayList<Double>();
+		double sum =0.0;
+		
+		for (int i=1;i<=6;i++){
+			String s = "2017-0"+i+"%";
+			String hql = "from model.Accommodation as ac where ac.date like '"+ s+ "'";
+			System.out.println("hql:"+hql);
+			List<Accommodation> results = baseDao.findByHql(hql);
+	        sum = 0.0;
+			for (Accommodation ac:results){
+	        	sum+=ac.getMoney();
+	        }
+	        answer.add(sum);
+
+		}
+	    return answer;
+	}
+
+	@Override
+	public ArrayList<Double> getAverageOfMoney() {
+		ArrayList<Double> answer = new ArrayList<Double>();
+		double average =0.0;
+		
+		for (int i=1;i<=6;i++){
+			String s = "2017-0"+i+"%";
+			String hql = "from model.Accommodation as ac where ac.date like '"+ s+"'";
+			List<Accommodation> results = baseDao.findByHql(hql);
+			average = 0.0;
+			for (Accommodation ac:results){
+				average+=ac.getMoney();
+	        }
+	        answer.add(average/results.size());
+
+		}
+	    return answer;
 	}
 
 }
